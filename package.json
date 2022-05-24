@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -26,17 +26,22 @@
     "@nestjs/core": "^8.0.0",
     "@nestjs/microservices": "^8.4.5",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/platform-socket.io": "^8.4.5",
+    "cache-manager": "^3.6.3",
     "kafkajs": "^2.0.1",
     "redis": "^3.1.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "socket.io-client": "^4.5.1"
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1",
+    "socket.io-redis": "^6.1.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
     "@nestjs/testing": "^8.0.0",
+    "@types/cache-manager": "^3.4.3",
     "@types/express": "^4.17.13",
     "@types/jest": "27.5.0",
     "@types/node": "^16.0.0",
@@ -62,7 +67,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": ".",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
@@ -70,7 +75,16 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/src/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "^@app/my-library(|/.*)$": "<rootDir>/libs/my-library/src/$1",
+      "^@app/cache-library(|/.*)$": "<rootDir>/libs/cache-library/src/$1",
+      "^@app/test-library(|/.*)$": "<rootDir>/libs/test-library/src/$1"
+    }
   }
 }

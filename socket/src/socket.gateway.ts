@@ -14,9 +14,9 @@ export class SocketGateWay {
   @WebSocketServer() server: Server
 
   constructor() {
-    if (!this.server) {
-      this.server = new Server()
-    }
+    // if (!this.server) {
+    //   this.server = new Server()
+    // }
   }
 
   async sendMessage (data) {

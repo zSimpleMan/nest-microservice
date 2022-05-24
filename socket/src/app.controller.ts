@@ -1,3 +1,4 @@
+import { CacheLibraryService } from '@app/cache-library';
 import { Controller, Get } from '@nestjs/common';
 import { MessagePattern } from '@nestjs/microservices';
 import { AppService } from './app.service';
@@ -5,7 +6,8 @@ import { SocketGateWay } from './socket.gateway';
 
 @Controller()
 export class AppController {
-  constructor(private readonly socketGateWay: SocketGateWay) {}
+  constructor(private readonly socketGateWay: SocketGateWay,
+    private readonly cache: CacheLibraryService) {}
 
   @MessagePattern({ cmd: 'push-message' })
   async get(data) {

@@ -16,6 +16,20 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/cache-library": [
+        "../libs/cache-library/src"
+      ],
+      "@app/cache-library/*": [
+        "../libs/cache-library/src/*"
+      ],
+      "@app/test-library": [
+        "../libs/test-library/src"
+      ],
+      "@app/test-library/*": [
+        "../libs/test-library/src/*"
+      ]
+    }
   }
 }
