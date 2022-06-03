@@ -18,18 +18,12 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/cache-library": [
-        "libs/cache-library/src"
+      "@libs": [
+        "./node_modules/libs"
       ],
-      "@app/cache-library/*": [
-        "libs/cache-library/src/*"
-      ],
-      "@app/test-library": [
-        "libs/test-library/src"
-      ],
-      "@app/test-library/*": [
-        "libs/test-library/src/*"
-      ]
     }
-  }
+  },
+  "include": [
+    "./src"
+  ]
 }

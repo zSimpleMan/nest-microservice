@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "CommonJS",
+    "target": "es2017",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "outDir": "./dist"
+  },
+  "compileOnSave": false
+}

@@ -1,6 +1,7 @@
-import { CacheLibraryService } from '@app/cache-library';
-import { TestLibraryService } from '@app/test-library';
+import { CacheLibraryService } from '@libs';
+import { TestLibraryService } from '@libs';
 import { Controller, Get, Inject, Req } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { ClientProxy } from '@nestjs/microservices';
 import { Cache } from 'cache-manager';
 import { Request } from 'express';

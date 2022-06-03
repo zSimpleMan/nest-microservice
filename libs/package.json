@@ -1,0 +1,13 @@
+{
+  "name": "libs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && npm run link:client",
+    "link:client": "rm -rf ../client/node_modules/libs && cp -rf ./dist ../client/node_modules/libs"
+  },
+  "author": "",
+  "license": "ISC"
+}
